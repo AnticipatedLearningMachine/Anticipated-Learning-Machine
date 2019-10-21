@@ -20,3 +20,8 @@ This 241-dimensional dataset comes from the satellite cloud image data recording
 ## Experiment Result
 ![image](https://github.com/AnticipatedLearningMachine/Anticipated-Learning-Machine/blob/master/gif/traffic.gif)
 ![image](https://github.com/AnticipatedLearningMachine/Anticipated-Learning-Machine/blob/master/gif/typhoon.gif)
+
+## Requirements
+● python3.7
+● pytorch 1.0.0
+● numpy 1.15.2
