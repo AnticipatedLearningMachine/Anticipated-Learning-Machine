@@ -22,6 +22,9 @@ This 241-dimensional dataset comes from the satellite cloud image data recording
 ![image](https://github.com/AnticipatedLearningMachine/Anticipated-Learning-Machine/blob/master/gif/typhoon.gif)
 
 ## Requirements
-● python3.7
-● pytorch 1.0.0
-● numpy 1.15.2
+* python3.7
+* pytorch 1.0.0
+* numpy 1.15.2
+
+## Code Usage
+Each time, the program main.py can only predict one future time point and when you predict the next time point, you should add the parameter num by 1.
