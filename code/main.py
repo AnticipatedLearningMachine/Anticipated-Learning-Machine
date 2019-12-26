@@ -127,6 +127,7 @@ def evaluate(output1, output2, Label, loss_function):
     return loss1, loss2, loss1+alpha*loss2
 
 # train model
+
 def train(model1, model2, Label, loss_function, optimizer1,
           optimizer2):
     error = 0
@@ -139,13 +140,10 @@ def train(model1, model2, Label, loss_function, optimizer1,
     losses12 = []
     losses21 = []
     losses22 = []
-    modelpreds = []
-    preds1 = []
-    preds2 = []
-    grad0 = []
-    grad1 = []
-    grad2 = []
+    modelpreds=[]
 
+#     evals1 = []
+#     evals2 = []
     for epoch in range(EPOCH):
         model1.train()
         model2.train()
@@ -155,22 +153,15 @@ def train(model1, model2, Label, loss_function, optimizer1,
         train2_dropout_data = train2_dropout_data.to(device)
         output1 = model1(train1_dropout_data)
         output2 = model2(train2_dropout_data)
-
         # loss function
-        # train model1
         loss11, loss12, loss1 = evaluate(output1, output2, Label, loss_function)
         optimizer1.zero_grad()
         loss1.backward()
-        
-        grad0.append(torch.mean(model1.layers[0].weight.grad.data).item())
-        grad1.append(torch.mean(model1.layers[4].weight.grad.data).item())
-        grad2.append(torch.mean(model1.layers[-1].weight.grad.data).item())
+
         optimizer1.step()
         output1 = model1(train1_dropout_data)
         output2 = model2(train2_dropout_data)
-
-        # loss function of model2
-        # train model2
+        
         loss21, loss22, loss2 = evaluate(output2, output1, Label, loss_function)
         optimizer2.zero_grad()
         loss2.backward()
@@ -188,14 +179,11 @@ def train(model1, model2, Label, loss_function, optimizer1,
         pred1 = model1(Pred)
         pred2 = model2(Pred)
         modelpreds.append((pred1[1].item() + pred2[0].item()) / 2.0)
-        preds1.append(pred1[1].item())
-        preds2.append(pred2[0].item())
-    return error, losses11, losses12, losses1, losses21, losses22, losses2, modelpreds, preds1, preds2, [grad0, grad1, grad2]
+
+    return error, losses11, losses12, losses1, losses21, losses22, losses2,modelpreds
 
 from scipy.stats import pearsonr
 
-# steps --- number of time points to predict
-# repeating --- repeat 10 times to get the average result
 def fit(steps, repeating = 10):
     final_predicts = np.array([0.0]*steps)
     for j in range(repeating):
@@ -218,19 +206,16 @@ def fit(steps, repeating = 10):
                                           lr=LR2,
                                           weight_decay=w)
             loss_function = nn.MSELoss()
-            error, losses11, losses12, losses1, losses21, losses22, losses2, modelpreds, preds1, preds2, GRADS = train(model1, model2,
+            error, losses11, losses12, losses1, losses21, losses22, losses2,modelpreds = train(model1, model2,
                                                  LABEL, loss_function, optimizer1,
                                                  optimizer2)
-            '''
+            
             show_multi_curve([losses11, losses12,  losses21, losses22],
                              "losses for the " + str(index + 1) + " th step",
                              ["losses11", "losses12",  "losses21", "losses22"], "EPOCH", "Value")
             show_multi_curve([losses1, losses2],
                              "train and test losses for the " + str(index + 1) + " th step",
                              ["train_losses1", "train_losses2"], "EPOCH", "Value")
-            show_multi_curve(GRADS, "train grads for the " + str(index + 1) + " th step",
-                             ["grad"+str(i+1) for i in range(len(GRADS))], "EPOCH", "Value")
-            '''
             target = Label[train_time_points + index + period]
             targets.append(target)
             predicts.append(modelpreds[-1])
@@ -238,19 +223,15 @@ def fit(steps, repeating = 10):
 
             label.append(predicts[-1])
             label = label[1:]
-            '''
-            show_multi_curve([preds1, preds2, modelpreds, [target] * EPOCH],
-                             "predictions for the " + str(index + 1) + " th step",
-                             [str(index + 1) + " th prediction", str(index + 2) + " th prediction","final prediction", "targets"], "EPOCH", "Value")
-            '''
-        '''
+            
+        
         show_multi_curve([predicts, targets],
                          "predictions from the 1 th to the " + str(steps) + " th steps",
                          ["predictions", "targets"], "STEP", "Value", True)
         show_multi_curve([[abs(x-y) for x,y in zip(predicts, targets)], errors],
                          "errors from the 1 th to the " + str(steps) + " th steps",
                          ["prediction_errors", "train_errors"], "STEP", "Value", True)
-        '''
+        
         print(predicts, targets)
         predicts, target = np.array(predicts), np.array(targets)
         print('test MAE', MAE(predicts, targets))
@@ -272,7 +253,6 @@ def fit(steps, repeating = 10):
     print('alpha ---- ', alpha)
     print('w ---- ', w)
     print('activate ---- ', activate)
-    print('units ---- ', units)
 
 
 fit(10,10)
