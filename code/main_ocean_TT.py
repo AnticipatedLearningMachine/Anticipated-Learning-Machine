@@ -81,6 +81,8 @@ class NN(nn.Module):
         return nn.Sequential(*layers)
 
 units = [INPUT_SIZE]+[200,150,100,50,25]
+net = NN(units)
+print(net)
 
 # plot function
 import matplotlib.pyplot as plt
