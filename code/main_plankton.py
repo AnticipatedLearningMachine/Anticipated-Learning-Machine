@@ -12,11 +12,16 @@ torch.backends.cudnn.benchmark = False
 torch.cuda.manual_seed(SEED)
 
 #initial parameters
-# LR1,LR2 --- 0.01
-# D --- 0.3~0.8
-# DROPOUT --- 0.3~0.8
-# EPOCH --- 300
-# Activate --- LeakyReLU(0.01~0.02)
+# LR1= 0.01 LR2 = 0.01 epoch=300
+'''
+divide 30 points into 6 segments --------------
+1-5: period = 0 	D=0.3 	DROPOUT=0.8		alpha=1 	Activete=LeakyReLU(0.02)
+6-10: period = 5 	D=0.8   DROPOUT=0.8		alpha=1 	Activete=LeakyReLU(0.01)
+11-15: period = 10 	D=0.4   DROPOUT=0.45 	alpha=5 	Activete=LeakyReLU(0.01)
+16-20: period = 15  D=0.4   DROPOUT=0.35 	alpha=5 	Activete=LeakyReLU(0.01)
+21-25: period = 20  D=0.4   DROPOUT=0.4 	alpha=5 	Activete=LeakyReLU(0.01)
+26-30: period = 25  D=0.4   DROPOUT=0.45 	alpha=5 	Activete=LeakyReLU(0.01)
+'''
 LR1 = 0.01
 LR2 = 0.01
 D = 0.3
