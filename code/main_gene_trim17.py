@@ -12,11 +12,11 @@ torch.backends.cudnn.benchmark = False
 torch.cuda.manual_seed(SEED)
 
 #initial parameters
-# LR1,LR2 --- 0.01
-# D --- 0.6~0.95
-# DROPOUT --- 0.5~0.9
-# EPOCH --- 300
-# alpha --- 1
+'''
+	LR1	LR2	D	DROPOUT	        period	        EPOCH	    alpha	    Activate
+1-6:	0.01	0.01	0.95	0.9		0		300		1		ReLU
+7-11:	0.01	0.01	0.65	0.5		6		300		1		ReLU
+'''
 LR1 = 0.01
 LR2 = 0.01
 D = 0.95
