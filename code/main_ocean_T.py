@@ -14,13 +14,13 @@ torch.cuda.manual_seed(SEED)
 #initial parameters
 '''
 divide 30 points into 6 segments:
-		LR1		LR2		D		DROPOUT		period	EPOCH		Activate
-1-5:	0.2		0.2		0.6		0.5			0		200			Tanh
-6-10:	0.01	0.01	0.7		0.75		5		300			Tanh
-11-15:	0.01	0.01	0.8		0.93		10		300			Tanh
-16-20:	0.01	0.01	0.9		0.9			15		300			Tanh
-21-25:	0.01	0.01	0.9		0.1			20		300			Tanh
-26-30:	0.01	0.01	0.94	0.6			25		300			Tanh
+	LR1	LR2	D		DROPOUT		period		EPOCH	alpha		Activate
+1-5:	0.2	0.2	0.6		0.5		0		200	1		Tanh
+6-10:	0.01	0.01	0.7		0.75		5		300	1		Tanh
+11-15:	0.01	0.01	0.8		0.93		10		300	1		Tanh
+16-20:	0.01	0.01	0.9		0.9		15		300	1		Tanh
+21-25:	0.01	0.01	0.9		0.1		20		300	1		Tanh
+26-30:	0.01	0.01	0.94		0.6		25		300	1		Tanh
 '''
 LR1 = 0.2
 LR2 = 0.2
