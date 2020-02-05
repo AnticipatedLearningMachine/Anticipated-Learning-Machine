@@ -12,10 +12,15 @@ torch.backends.cudnn.benchmark = False
 torch.cuda.manual_seed(SEED)
 
 #initial parameters
-# LR1,LR2 --- 0.5
-# D --- 0.5
-# DROPOUT --- 0~0.7
-# EPOCH --- 200~500
+# LR1= 0.5 	LR2 = 0.5  Activate=Tanh
+'''
+divide 20 points into 4 segments
+-------------------------------------
+1-5: period = 0  epoch = 300 D = 0.5
+6-10: period = 5 epoch = 200 D = 0.9
+11-15: period = 10 epoch = 500 D = 0.5
+16-20: period = 15 epoch = 500 D = 0.5
+'''
 LR1 = 0.5
 LR2 = 0.5
 D = 0.5
