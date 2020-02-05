@@ -12,12 +12,14 @@ torch.backends.cudnn.benchmark = False
 torch.cuda.manual_seed(SEED)
 
 #initial parameters
-# LR1,LR2 --- 0.01
-# D --- 0.6
-# DROPOUT --- 0.1~0.6
-# EPOCH --- 300
-# alpha --- 1~2
-# activate --- LeakyReLU(0.01)
+'''
+		LR1		LR2		D		DROPOUT	period	EPOCH	alpha	Activate
+1-5:	0.01	0.01	0.6 	0.1		0		300		1		LeakyReLU(0.01)
+6-10:	0.01	0.01	0.6 	0.5		5		300		2		LeakyReLU(0.01)
+11-15:	0.01	0.01	0.6 	0.5		10		300		2		LeakyReLU(0.01)
+16-20:	0.01	0.01	0.6 	0.6		15		300		2		LeakyReLU(0.01)
+21-25:	0.01	0.01	0.6 	0.6		20		300		2		LeakyReLU(0.01)
+'''
 LR1 = 0.01
 LR2 = 0.01
 D = 0.6
