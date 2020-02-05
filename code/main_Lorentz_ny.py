@@ -13,12 +13,12 @@ torch.cuda.manual_seed(SEED)
 
 #initial parameters
 '''
-		LR1		LR2		D		DROPOUT	period	EPOCH	alpha	Activate
+	LR1	LR2	D		DROPOUT		period		EPOCH		alpha		Activate
 1-3:	0.01	0.01	0.6		0.6		0		300		1 		LeakyReLU(0.01)
-4:		0.01	0.01	0.6		0.75	3		300		1 		LeakyReLU(0.01)
-5:		0.01	0.01	0.6		0.85	4		300		1 		LeakyReLU(0.05)
-6:		0.01	0.01	0.6		0.85	5		300		1 		LeakyReLU(0.01)
-7:		0.01	0.01	0.6		0.9		6		300		1 		LeakyReLU(0.05)
+4:	0.01	0.01	0.6		0.75		3		300		1 		LeakyReLU(0.01)
+5:	0.01	0.01	0.6		0.85		4		300		1 		LeakyReLU(0.05)
+6:	0.01	0.01	0.6		0.85		5		300		1 		LeakyReLU(0.01)
+7:	0.01	0.01	0.6		0.9		6		300		1 		LeakyReLU(0.05)
 8-12:	0.01	0.01	0.6		0.6		7		300		1 		LeakyReLU(0.5)
 13-15:	0.01	0.01	0.6		0.8		12		300		1 		LeakyReLU(0.6)
 16-18:	0.01	0.01	0.6		0.1		15		300		2 		LeakyReLU(0.01)
