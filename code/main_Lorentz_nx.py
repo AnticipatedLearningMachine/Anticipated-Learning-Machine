@@ -12,11 +12,34 @@ torch.backends.cudnn.benchmark = False
 torch.cuda.manual_seed(SEED)
 
 #initial parameters
-# LR1,LR2 --- 0.005~0.01
-# D --- 0.6~0.9
-# DROPOUT --- 0~0.9
-# EPOCH --- 500~2000
-# activate --- LeakyReLU(0.01) ~ LeakyReLU(0.9)
+'''
+		LR1		LR2		D		DROPOUT	period	EPOCH	alpha	Activate
+1:		0.01	0.01	0.6		0.2		0		500		1		LeakyReLU(0.01)
+2:		0.01	0.01	0.6		0.5		1		500		1		LeakyReLU(0.01)
+3:		0.01	0.01	0.6		0.5		2		500		1		LeakyReLU(0.01)
+4:		0.01	0.01	0.6		0.7		3		500		1		LeakyReLU(0.01)
+5:		0.01	0.01	0.6		0.8		4		500		1		LeakyReLU(0.01)
+6:		0.01	0.01	0.6		0.8		5		500		1		LeakyReLU(0.01)
+7:		0.01	0.01	0.6		0.8		6		500		1		LeakyReLU(0.01)
+8:		0.01	0.01	0.6		0.9		7		2000	1		LeakyReLU(0.01)
+9:		0.005	0.005	0.9		0.8		8		500		1		LeakyReLU(0.5)
+10:		0.005	0.005	0.9		0.8		9		500		1		LeakyReLU(0.7)
+11:		0.005	0.005	0.9		0.8		10		500		1		LeakyReLU(0.7)
+12:		0.005	0.005	0.9		0.8		11		500		1		LeakyReLU(0.7)
+13:		0.005	0.005	0.9		0.8		12		500		1		LeakyReLU(0.7)
+14:		0.005	0.005	0.9		0.8		13		500		1		LeakyReLU(0.9)
+15:		0.005	0.005	0.9		0.8		14		500		1		LeakyReLU(0.9)
+16:		0.005	0.005	0.9		0.8		15		500		1		LeakyReLU(0.9)
+17:		0.005	0.005	0.9		0		16		500		1		LeakyReLU(0.9)
+18:		0.005	0.005	0.7		0		17		500		1		LeakyReLU(0.5)
+19:		0.005	0.005	0.7		0		18		500		1		LeakyReLU(0.5)
+20:		0.005	0.005	0.8		0		19		500		1		LeakyReLU(0.5)
+21:		0.005	0.005	0.9		0		20		500		1		LeakyReLU(0.5)
+22:		0.005	0.005	0.9		0		21		500		1		LeakyReLU(0.5)
+23:		0.005	0.005	0.9		0		22		500		1		LeakyReLU(0.5)
+24:		0.005	0.005	0.9		0		23		500		1		LeakyReLU(0.5)
+25:		0.005	0.005	0.9		0		24		500		1		LeakyReLU(0.5)
+'''
 LR1 = 0.01
 LR2 = 0.01
 D = 0.6
