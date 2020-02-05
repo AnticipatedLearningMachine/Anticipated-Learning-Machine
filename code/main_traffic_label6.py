@@ -13,7 +13,7 @@ torch.cuda.manual_seed(SEED)
 
 #initial parameters
 '''
-		LR1		LR2		D		DROPOUT	period	EPOCH	alpha	Activate
+	LR1	LR2	D		DROPOUT		period		EPOCH		alpha		Activate
 1-5:	0.05	0.05	0.5		0.1		0		100		10		Tanh
 6-10:	0.05	0.05	0.5		0		5		100		10		Tanh
 '''
