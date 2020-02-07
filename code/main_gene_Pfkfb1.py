@@ -284,10 +284,9 @@ consistent-training process
 fit(5,10)
 
 '''
-after predicting all the 10 time points, train the model by the consistent-training scheme. 
+because the data set of Gene is too short, so don't train the model by the consistent-training scheme. 
 '''
-# load the true value of Pfkfb1 (22 time points)
-Label = np.loadtxt('Pfkfb1.txt')
+
 
 from tqdm import tqdm_notebook
 def show_multi_curve_2(ys, title, legends, xxlabel, yylabel, start_point = 0, if_point = False):
@@ -304,7 +303,7 @@ def show_multi_curve_2(ys, title, legends, xxlabel, yylabel, start_point = 0, if
     plt.legend()
     plt.show()
 # steps of prediction
-step = 5
+step = 11
 repeat = 10
 
 # NEWINPUTS[i] ---- training inputs of φi 
