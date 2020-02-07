@@ -284,7 +284,7 @@ consistent-training process
 fit(5,10)
 
 '''
-because the data set of Gene is too short, so don't train the model by the consistent-training scheme. 
+because the data set of Gene is too short, we didn't train the model by the consistent-training scheme. 
 '''
 
 
