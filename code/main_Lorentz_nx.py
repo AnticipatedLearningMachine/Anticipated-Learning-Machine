@@ -307,6 +307,8 @@ fit(5,10)
 '''
 after predicting all the 25 time points, train the model by the consistent-training scheme. 
 '''
+# load the true value of x (55 time points)
+Label = np.loadtxt('x.txt')
 
 from tqdm import tqdm_notebook
 def show_multi_curve_2(ys, title, legends, xxlabel, yylabel, start_point = 0, if_point = False):
