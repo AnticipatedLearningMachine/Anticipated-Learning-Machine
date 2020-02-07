@@ -310,6 +310,8 @@ fit(5,10)
 '''
 after predicting all the 27 time points, train the model by the consistent-training scheme. 
 '''
+# load the true value of latitude (77 time points)
+Label = np.loadtxt('latitude.txt')
 
 from tqdm import tqdm_notebook
 def show_multi_curve_2(ys, title, legends, xxlabel, yylabel, start_point = 0, if_point = False):
