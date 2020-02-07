@@ -23,8 +23,11 @@ This 241-dimensional dataset comes from the satellite cloud image data recording
 
 ## Requirements
 * python 3.7
-* pytorch 1.2.0
+* pytorch 1.2.0 (important)
 * numpy 1.16.4
-* CUDA Version 10.2 
+* CUDA Version 10.2 (important)
 * GPU & linux
 
+Note that the version of pytorch and CUDA are important factors and the results vary slightly depending on the device.
+
+The current model is a little sensitive to parameters and we will continue our research to fix this problem in the future.
