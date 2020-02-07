@@ -307,8 +307,10 @@ consistent-training process
 fit(5,10)
 
 '''
-train the model by the consistent-training scheme. 
+after predicting all the 27 time points, train the model by the consistent-training scheme. 
 '''
+# load the true value of longitude (77 time points)
+Label = np.loadtxt('longitude.txt')
 
 from tqdm import tqdm_notebook
 def show_multi_curve_2(ys, title, legends, xxlabel, yylabel, start_point = 0, if_point = False):
