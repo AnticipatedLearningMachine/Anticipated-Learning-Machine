@@ -229,9 +229,7 @@ def fit(steps, repeating = 10):
             show_multi_curve([losses1, losses2],
                              "train and test losses for the " + str(index + 1) + " th step",
                              ["train_losses1", "train_losses2"], "EPOCH", "Value")
-            show_multi_curve(GRADS, "train grads for the " + str(index + 1) + " th step",
-                             ["grad"+str(i+1) for i in range(len(GRADS))], "EPOCH", "Value")
-            
+
             target = Label[train_time_points + index + period]
             targets.append(target)
             predicts.append(modelpreds[-1])
@@ -243,10 +241,7 @@ def fit(steps, repeating = 10):
             del model1
             del model2
             
-            show_multi_curve([preds1, preds2, modelpreds, [target] * EPOCH],
-                             "predictions for the " + str(index + 1) + " th step",
-                             [str(index + 1) + " th prediction", str(index + 2) + " th prediction","final prediction", "targets"], "EPOCH", "Value")
-            
+
         
         show_multi_curve([predicts, targets],
                          "predictions from the 1 th to the " + str(steps) + " th steps",
