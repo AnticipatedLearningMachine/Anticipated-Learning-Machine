@@ -327,7 +327,7 @@ def show_multi_curve_2(ys, title, legends, xxlabel, yylabel, start_point = 0, if
     plt.legend()
     plt.show()
 # steps of prediction
-step = 5
+step = 27
 repeat = 10
 
 # NEWINPUTS[i] ---- training inputs of φi 
