@@ -290,7 +290,7 @@ fit(5,10)
 '''
 after predicting all the 30 time points, train the model by the consistent-training scheme. 
 '''
-# load the true value of TT (30 time points)
+# load the true value of TT (80 time points)
 Label = np.loadtxt('TT.txt')
 
 from tqdm import tqdm_notebook
