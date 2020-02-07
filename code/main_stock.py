@@ -285,8 +285,10 @@ consistent-training process
 fit(5,10)
 
 '''
-train the model by the consistent-training scheme. 
+after predicting all the 20 time points, train the model by the consistent-training scheme. 
 '''
+# load the true value of SSEA (70 time points)
+Label = np.loadtxt('SSEA.txt')
 
 from tqdm import tqdm_notebook
 def show_multi_curve_2(ys, title, legends, xxlabel, yylabel, start_point = 0, if_point = False):
@@ -303,7 +305,7 @@ def show_multi_curve_2(ys, title, legends, xxlabel, yylabel, start_point = 0, if
     plt.legend()
     plt.show()
 # steps of prediction
-step = 5
+step = 20
 repeat = 10
 
 # NEWINPUTS[i] ---- training inputs of φi 
