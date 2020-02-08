@@ -30,4 +30,4 @@ This 241-dimensional dataset comes from the satellite cloud image data recording
 
 Note that the version of pytorch and CUDA are important factors and the results vary slightly depending on the device.
 
-The current model is a little sensitive to parameters and we are ongoing to fix the issue.
+The current model is a little sensitive to parameters and our research is ongoing to fix the issue.
