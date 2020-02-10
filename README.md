@@ -30,4 +30,5 @@ This 241-dimensional dataset comes from the satellite cloud image data recording
 
 Note that the version of pytorch and CUDA are important factors and the results vary slightly depending on the device.
 
-The current model is a little sensitive to parameters and our research is ongoing to fix the issue.
+Under the current framework, the hyper-parameters setting remain to be sensitive in some of the experiments mainly due to the inherent complexity of different systems, and the following work is ongoingly taken to handle these issues. More appropriate schemes taking the inherent complexity into consideration remain to be an open and interesting problem.
+
