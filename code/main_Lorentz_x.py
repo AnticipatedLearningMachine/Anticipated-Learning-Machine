@@ -301,6 +301,7 @@ fit(5,10)
 '''
 after predicting all the 25 time points, train the model by the consistent-training scheme. 
 '''
+'''
 # load the true value of x (55 time points)
 Label = np.loadtxt('x.txt')
 
@@ -453,3 +454,4 @@ print('test MAE', MAE(final_predicts, targets))
 print('test RMSE', RMSE(final_predicts, targets))
 print('test pearsonr', pearsonr(final_predicts, targets))
 print('test spearmanr',spearmanr(final_predicts,targets))
+'''
