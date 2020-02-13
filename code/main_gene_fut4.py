@@ -282,7 +282,7 @@ fit(5,10)
 '''
 because the data set of Gene is too short, we didn't train the model by the consistent-training scheme. 
 '''
-
+'''
 from tqdm import tqdm_notebook
 def show_multi_curve_2(ys, title, legends, xxlabel, yylabel, start_point = 0, if_point = False):
     x = np.array(range(len(ys[0])))
@@ -432,3 +432,4 @@ print('test MAE', MAE(final_predicts, targets))
 print('test RMSE', RMSE(final_predicts, targets))
 print('test pearsonr', pearsonr(final_predicts, targets))
 print('test spearmanr',spearmanr(final_predicts,targets))
+'''
