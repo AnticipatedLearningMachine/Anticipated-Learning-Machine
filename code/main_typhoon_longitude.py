@@ -304,6 +304,7 @@ fit(5,10)
 '''
 after predicting all the 27 time points, train the model by the consistent-training scheme. 
 '''
+'''
 # load the true value of longitude (77 time points)
 Label = np.loadtxt('longitude.txt')
 
@@ -456,3 +457,4 @@ print('test MAE', MAE(final_predicts, targets))
 print('test RMSE', RMSE(final_predicts, targets))
 print('test pearsonr', pearsonr(final_predicts, targets))
 print('test spearmanr',spearmanr(final_predicts,targets))
+'''
