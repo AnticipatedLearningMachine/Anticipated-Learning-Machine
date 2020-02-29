@@ -293,7 +293,7 @@ the pairwise-training ends, if the result predicted here is good enough, there i
 following codes; else you can use the models saved by the above codes to initial input of the following
 consistent-training process
 '''
-fit(5,10)
+fit(1,10)
 
 '''
 after predicting all the 25 time points, train the model by the consistent-training scheme. 
